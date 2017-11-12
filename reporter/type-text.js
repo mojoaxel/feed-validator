@@ -51,9 +51,12 @@ module.exports = function textReporter(validationData, options) {
 
     return _([
         prepareString('Validation results', 'magenta'),
-        prepareString('Feed:', 'green'),
-        validationData.feedXml,
         '',
+        !options.noShowFeed ? [
+            prepareString('Feed:', 'green'),
+            validationData.feedXml,
+            ''
+        ] : null,
         validationData.errors.length ? [
             prepareString('Errors:', 'red'),
             createTable(_.map(validationData.errors, mapItem)),
