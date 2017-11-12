@@ -11,6 +11,7 @@ var _ = require('lodash');
  * @param {Object} validationData
  * @param {Object} [options]
  * @param {Boolean} options.noColors
+  * @param {Boolean} options.noShowFeed
  * @returns {String}
  */
 module.exports = function textReporter(validationData, options) {
